@@ -40,7 +40,8 @@ package
             var stageWidth:int   = Constants.STAGE_WIDTH;
             var stageHeight:int  = Constants.STAGE_HEIGHT;
             var iOS:Boolean = Capabilities.manufacturer.indexOf("iOS") != -1;
-            
+            trace("Capabilities.manufacturer", Capabilities.manufacturer);
+			
             Starling.multitouchEnabled = true;  // useful on mobile devices
             Starling.handleLostContext = !iOS;  // not necessary on iOS. Saves a lot of memory!
             
@@ -52,7 +53,7 @@ package
             
             var viewPort:Rectangle = RectangleUtil.fit(
                 new Rectangle(0, 0, stageWidth, stageHeight), 
-                new Rectangle(0, 0, stage.fullScreenWidth, stage.fullScreenHeight), true);
+                new Rectangle(0, 0, stage.fullScreenWidth, stage.fullScreenHeight), false);
             
             // create the AssetManager, which handles all required assets for this resolution
             
